@@ -1,8 +1,8 @@
 <?php
-$host     = 'localhost';
+$host     = '192.168.100.10';
 $dbname   = 'god_bless_casino';
 $user     = 'root';       // votre user MySQL
-$password = '';       // votre mot de passe MySQL
+$password = 'vboxuser';       // votre mot de passe MySQL
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $user, $password);
