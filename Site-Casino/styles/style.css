@@ -1,0 +1,396 @@
+/* ============================================================
+   STYLE.CSS — God Bless Casino
+   Contient tous les styles du site (global + pages + jeux)
+   ============================================================ */
+
+
+/* ══ BASE ══ */
+
+body {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #fff;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+
+/* ══ ANIMATION GLOBALE ══ */
+
+@keyframes fadeInAbout {
+  from { opacity: 0; transform: translateY(15px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ══ HEADER ══ */
+
+header.banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: rgba(22, 33, 62, 0.95);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+}
+header .logo {
+  width: 90px; height: 90px;
+  object-fit: cover; border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+header nav ul { display: flex; gap: 25px; list-style: none; margin: 0; padding: 0; }
+header nav a {
+  color: #fff; text-decoration: none;
+  font-weight: 600; font-size: 1.1em;
+  padding: 8px 16px; border-radius: 20px;
+  transition: background 0.2s;
+}
+header nav a.active,
+header nav a:hover { background: #e94560; color: #fff; }
+
+/* Badge solde */
+.solde-container {
+  display: flex; align-items: center;
+  margin-left: 18px; background: #e94560; color: #fff;
+  border-radius: 18px; padding: 6px 18px;
+  font-weight: bold; font-size: 1.1em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+.solde-label   { margin-right: 6px; }
+.solde-montant { font-size: 1.1em; color: #fff; }
+
+/* Menu utilisateur */
+.user-menu { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.btn-profil {
+  display: flex; align-items: center; gap: 8px;
+  background: #0f3460; color: #fff;
+  border-radius: 24px; padding: 8px 18px;
+  font-weight: 600; font-size: 1em;
+  text-decoration: none; transition: background 0.2s;
+}
+.btn-profil:hover { background: #e94560; color: #fff; }
+.profil-icon { font-size: 1.15em; }
+.btn-logout {
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.25);
+  color: #b0b0b0; border-radius: 24px;
+  padding: 7px 15px; font-size: 0.9em;
+  font-weight: 500; text-decoration: none;
+  transition: all 0.2s;
+}
+.btn-logout:hover { background: #e94560; border-color: #e94560; color: #fff; }
+
+
+/* ══ FOOTER ══ */
+
+footer {
+  background: #0f3460; color: #fff;
+  text-align: center; padding: 30px 10px 15px;
+  margin-top: 40px; font-size: 1em;
+}
+footer .footer-links { margin-bottom: 10px; }
+footer .footer-links a { color: #e94560; text-decoration: none; margin: 0 8px; font-weight: 500; }
+footer .footer-links a:hover { text-decoration: underline; }
+
+
+/* ══ BOUTONS GLOBAUX ══ */
+
+.btn {
+  display: inline-block; padding: 10px 28px;
+  border-radius: 24px; background: #0f3460; color: #fff;
+  text-decoration: none; font-weight: 600; font-size: 1.1em;
+  margin: 8px 6px; transition: background 0.2s, color 0.2s;
+  border: none; cursor: pointer;
+}
+.btn-primary   { background: #e94560; color: #fff; }
+.btn-secondary { background: #16213e; color: #fff; }
+.btn-lg        { font-size: 1.3em; padding: 16px 40px; }
+.btn:hover, .btn-primary:hover, .btn-secondary:hover { background: #fff; color: #e94560; }
+
+
+/* ══ PAGE ACCUEIL ══ */
+
+.presentation { text-align: center; padding: 60px 20px 30px; }
+.presentation h1 { font-size: 2.8em; margin-bottom: 10px; color: #e94560; }
+.presentation p  { font-size: 1.3em; margin-bottom: 30px; }
+.banner-img { width: 100%; max-width: 700px; border-radius: 18px; box-shadow: 0 4px 24px rgba(0,0,0,0.25); margin: 0 auto; display: block; }
+
+.jeux-populaires { background: #16213e; padding: 50px 0 30px; text-align: center; }
+.jeux-populaires h2 { color: #e94560; margin-bottom: 30px; }
+.jeux-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-bottom: 25px; }
+.jeu { background: #1a1a2e; border-radius: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.15); padding: 20px; width: 220px; transition: transform 0.2s; }
+.jeu:hover { transform: translateY(-8px) scale(1.04); box-shadow: 0 6px 24px rgba(233,69,96,0.15); }
+.jeu img { width: 100%; height: 120px; object-fit: cover; border-radius: 10px; margin-bottom: 12px; }
+.jeu h3  { margin: 10px 0 6px; color: #fff; }
+.jeu p   { font-size: 1em; color: #b0b0b0; }
+
+.promotions { background: #0f3460; color: #fff; padding: 40px 0 30px; text-align: center; }
+.promotions h2 { color: #e94560; }
+.promotions ul { list-style: none; padding: 0; margin: 20px 0; }
+.promotions li { font-size: 1.1em; margin-bottom: 10px; }
+
+.securite { background: #16213e; color: #fff; padding: 40px 0 30px; text-align: center; }
+.securite h2 { color: #e94560; }
+
+.paiement { background: #1a1a2e; color: #fff; padding: 40px 0 30px; text-align: center; }
+.paiement h2 { color: #e94560; }
+
+.cta-inscription { background: #e94560; color: #fff; text-align: center; padding: 50px 0 40px; }
+.cta-inscription h2 { font-size: 2em; margin-bottom: 20px; }
+
+
+/* ══ PAGE A PROPOS / CONTACT ══ */
+
+/* Carte pour les pages simples (à propos, contact) */
+.page-card {
+  background: rgba(15, 52, 96, 0.55);
+  border-radius: 22px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+  padding: 50px 40px; margin: 60px auto; max-width: 1100px;
+  animation: fadeInAbout 0.8s ease-in-out;
+}
+.page-card h1 { font-size: 2.6em; margin-bottom: 30px; color: #e94560; text-shadow: 0 4px 12px rgba(0,0,0,0.35); margin-top: 0; }
+.page-card p  { max-width: 1000px; margin-left: auto; margin-right: auto; line-height: 1.8; margin-bottom: 22px; font-size: 1.1em; color: #e0e0e0; }
+
+
+/* ══ FORMULAIRES (paiement, contact) ══ */
+
+.formulaire {
+  background: #16213e; border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  padding: 32px 28px; margin-top: 32px; color: #fff;
+}
+.formulaire label { font-weight: 500; margin-bottom: 6px; display: block; }
+.formulaire input[type="number"],
+.formulaire input[type="text"],
+.formulaire input[type="email"],
+.formulaire input[type="password"],
+.formulaire input[type="date"] {
+  width: 100%; padding: 10px; border-radius: 8px; border: none;
+  margin-bottom: 18px; font-size: 1em; background: #1a1a2e; color: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+/* Masquer les flèches sur les inputs number */
+.formulaire input[type="number"]::-webkit-inner-spin-button,
+.formulaire input[type="number"]::-webkit-outer-spin-button,
+#montant::-webkit-inner-spin-button,
+#montant::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+.formulaire input[type="radio"] { accent-color: #e94560; margin-right: 8px; }
+.formulaire button[type="submit"] { margin-top: 10px; width: 100%; padding: 12px 0; font-size: 1.1em; }
+
+/* Textarea dans les formulaires */
+.formulaire .input-style {
+  width: 100%; padding: 10px; border-radius: 8px; border: none;
+  margin-bottom: 18px; font-size: 1em; background: #1a1a2e; color: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  resize: vertical; min-height: 100px; max-height: 300px;
+}
+
+/* Radios moyens de paiement */
+.formulaire .moyens { display: flex; gap: 10px; margin: 10px 0 20px; }
+.formulaire .moyens-vertical { display: flex; flex-direction: column; }
+.moyens-list { list-style: none; padding-left: 0; margin: 10px 0 20px; }
+.moyens-list li { font-size: 1.08em; color: #fff; margin-bottom: 8px; }
+.moyens-vertical label { display: block; margin-bottom: 10px; font-size: 1.08em; color: #fff; cursor: pointer; }
+
+
+/* ══ PAGE PROFIL ══ */
+
+.profil-wrap {
+  background: rgba(15,52,96,0.55); border-radius: 22px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+  padding: 50px 40px; margin: 60px auto; max-width: 600px;
+  animation: fadeInAbout 0.8s ease-in-out;
+}
+.profil-wrap h1 { color: #e94560; text-align: center; font-size: 2em; margin: 0 0 28px; }
+.profil-avatar {
+  width: 80px; height: 80px; background: #e94560; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2.2em; margin: 0 auto 20px;
+}
+.profil-infos { background: #16213e; border-radius: 14px; padding: 22px 26px; margin-bottom: 28px; }
+.profil-info-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.07);
+  font-size: 1.05em; gap: 20px;
+}
+.profil-info-row:last-child { border-bottom: none; }
+.profil-info-label  { color: #b0b0b0; font-weight: 500; }
+.profil-info-value  { color: #fff; font-weight: 600; text-align: right; }
+.profil-solde-value { color: #4caf50; font-weight: 700; font-size: 1.1em; }
+.profil-edit h2 { color: #e94560; font-size: 1.25em; margin: 0 0 16px; }
+.profil-edit label { display: block; color: #b0b0b0; font-weight: 500; margin-bottom: 5px; }
+.profil-edit input {
+  width: 100%; padding: 10px 12px; border-radius: 8px; border: none;
+  margin-bottom: 14px; font-size: 1em; background: #1a1a2e; color: #fff; box-sizing: border-box;
+}
+.success-msg { color: #4caf50; background: rgba(76,175,80,0.1); border-radius: 8px; padding: 10px; margin-bottom: 14px; }
+.guest-banner {
+  background: rgba(233,69,96,0.12); border: 1px solid rgba(233,69,96,0.3);
+  border-radius: 12px; padding: 14px 18px; text-align: center; color: #e94560; margin-bottom: 22px;
+}
+.guest-banner a { color: #fff; font-weight: 600; text-decoration: underline; }
+.profil-actions { display: flex; justify-content: center; gap: 18px; }
+
+/* Profil non connecté */
+.profil-connexion {
+  background: rgba(22,33,62,0.85); border-radius: 22px;
+  box-shadow: 0 6px 32px rgba(233,69,96,0.10);
+  padding: 48px 32px 38px; margin: 60px auto; max-width: 500px;
+  text-align: center; animation: fadeInAbout 0.8s ease-in-out;
+}
+.profil-connexion h1 { color: #e94560; font-size: 2.2em; margin-bottom: 18px; }
+.profil-connexion p  { font-size: 1.15em; color: #e0e0e0; margin-bottom: 28px; }
+
+
+/* ══ PAGE LOGIN ══ */
+
+.login-page {
+  min-height: 100vh; display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 40px 20px 100px; box-sizing: border-box;
+}
+.login-logo { width: 110px; height: 110px; object-fit: cover; border-radius: 50%; box-shadow: 0 4px 24px rgba(233,69,96,0.4); margin-bottom: 18px; }
+.login-title    { font-size: 2.3em; color: #e94560; margin-bottom: 6px; text-align: center; }
+.login-subtitle { color: #b0b0b0; margin-bottom: 36px; font-size: 1.05em; text-align: center; }
+.login-container { display: flex; gap: 36px; flex-wrap: wrap; justify-content: center; width: 100%; max-width: 860px; }
+.login-card {
+  background: rgba(15,52,96,0.55); border-radius: 22px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+  padding: 36px 32px; flex: 1; min-width: 270px; max-width: 370px;
+  animation: fadeInAbout 0.8s ease-in-out;
+}
+.login-card h2    { color: #e94560; font-size: 1.5em; margin: 0 0 22px; }
+.login-card label { display: block; color: #fff; font-weight: 500; margin-bottom: 5px; }
+.login-card input {
+  width: 100%; padding: 10px 12px; border-radius: 8px; border: none;
+  margin-bottom: 14px; font-size: 1em; background: #1a1a2e; color: #fff; box-sizing: border-box;
+}
+.err { color: #e94560; background: rgba(233,69,96,0.1); border-radius: 8px; padding: 9px 12px; margin-bottom: 12px; font-size: 0.93em; }
+.divider { width: 1px; background: rgba(255,255,255,0.1); align-self: stretch; }
+.back-link { position: fixed; bottom: 28px; left: 32px; color: #b0b0b0; text-decoration: none; font-size: 0.95em; }
+.back-link:hover { color: #fff; }
+
+
+/* ══ PAGE JEUX ══ */
+
+/* Grille des deux jeux */
+.jeux-container { display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; padding: 40px 20px 60px; max-width: 1200px; margin: 0 auto; }
+
+/* Carte commune */
+.game-card {
+  background: rgba(15,52,96,0.55); border-radius: 22px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+  padding: 36px 32px; flex: 1; min-width: 300px; max-width: 500px;
+  animation: fadeInAbout 0.8s ease-in-out; text-align: center;
+}
+.game-card h2         { color: #e94560; font-size: 1.7em; margin: 0 0 6px; }
+.game-card .sous-titre { color: #b0b0b0; font-size: 0.95em; margin-bottom: 24px; }
+
+/* Machine à sous */
+.machine { display: flex; justify-content: center; gap: 14px; margin: 20px 0; }
+.reel {
+  width: 90px; height: 90px; background: #16213e; border-radius: 14px;
+  border: 3px solid #0f3460; display: flex; align-items: center; justify-content: center;
+  font-size: 2.6em; box-shadow: inset 0 4px 12px rgba(0,0,0,0.4);
+}
+.reel.spin { animation: spinReel 0.6s ease-in-out; }
+@keyframes spinReel {
+  0%   { transform: scaleY(1);   opacity: 1; }
+  25%  { transform: scaleY(0.1); opacity: 0.3; }
+  50%  { transform: scaleY(1.1); opacity: 0.8; }
+  100% { transform: scaleY(1);   opacity: 1; }
+}
+
+/* Blackjack */
+.bj-table  { margin: 16px 0; }
+.bj-label  { color: #b0b0b0; font-size: 0.9em; margin-bottom: 6px; text-align: left; }
+.bj-cards  { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 4px; min-height: 70px; }
+.bj-total  { font-size: 0.85em; color: #b0b0b0; margin-bottom: 14px; text-align: left; }
+.bj-total span { color: #fff; font-weight: 600; }
+.bj-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 8px; }
+.card {
+  width: 52px; height: 72px; background: #fff; color: #1a1a2e;
+  border-radius: 8px; display: flex; align-items: center; justify-content: center;
+  font-size: 1.1em; font-weight: 700; box-shadow: 0 2px 8px rgba(0,0,0,0.3); transition: transform 0.2s;
+}
+.card.red  { color: #e94560; }
+.card.back { background: #0f3460; color: #fff; font-size: 1.5em; }
+.card.new  { animation: dealCard 0.3s ease-out; }
+@keyframes dealCard {
+  from { transform: translateY(-20px) scale(0.8); opacity: 0; }
+  to   { transform: translateY(0) scale(1); opacity: 1; }
+}
+.btn-bj          { padding: 10px 26px; border-radius: 20px; border: none; font-size: 1em; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+.btn-tirer        { background: #e94560; color: #fff; }
+.btn-tirer:hover  { background: #c73652; }
+.btn-rester       { background: #0f3460; color: #fff; }
+.btn-rester:hover { background: #1a4a8a; }
+.btn-bj:disabled  { background: #444; color: #888; cursor: not-allowed; }
+
+/* Commun machine à sous + blackjack */
+.mise-row { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 18px; flex-wrap: wrap; }
+.mise-row label { color: #b0b0b0; font-size: 0.95em; }
+.mise-input { width: 100px; padding: 8px 10px; border-radius: 10px; border: none; background: #1a1a2e; color: #fff; font-size: 1.05em; text-align: center; }
+.mise-input::-webkit-inner-spin-button { -webkit-appearance: none; }
+.btn-jouer { background: #e94560; color: #fff; border: none; border-radius: 26px; padding: 12px 40px; font-size: 1.1em; font-weight: 700; cursor: pointer; transition: background 0.2s, transform 0.1s; }
+.btn-jouer:hover    { background: #c73652; transform: translateY(-2px); }
+.btn-jouer:disabled { background: #555; cursor: not-allowed; transform: none; }
+
+/* Boîtes résultat */
+.result-box { margin-top: 18px; padding: 14px 18px; border-radius: 12px; font-size: 1.05em; font-weight: 600; display: none; }
+.result-box.jackpot   { background: rgba(255,215,0,0.15); color: #ffd700; border: 1px solid rgba(255,215,0,0.4); }
+.result-box.rembourse { background: rgba(76,175,80,0.15);  color: #4caf50; border: 1px solid rgba(76,175,80,0.4); }
+.result-box.win       { background: rgba(76,175,80,0.15);  color: #4caf50; border: 1px solid rgba(76,175,80,0.4); }
+.result-box.draw      { background: rgba(255,193,7,0.15);  color: #ffc107; border: 1px solid rgba(255,193,7,0.4); }
+.result-box.perdu, .result-box.lose, .result-box.erreur { background: rgba(233,69,96,0.12); color: #e94560; border: 1px solid rgba(233,69,96,0.3); }
+
+.solde-jeu { margin-top: 16px; font-size: 1em; color: #b0b0b0; }
+.solde-jeu span { color: #4caf50; font-weight: 700; }
+
+.regles { margin-top: 22px; background: #16213e; border-radius: 12px; padding: 14px 18px; text-align: left; font-size: 0.9em; color: #b0b0b0; }
+.regles h3 { color: #e94560; margin: 0 0 8px; font-size: 0.95em; }
+.regles ul { margin: 0; padding-left: 16px; }
+.regles li { margin-bottom: 4px; }
+
+.guest-msg { background: rgba(233,69,96,0.12); border: 1px solid rgba(233,69,96,0.3); border-radius: 14px; padding: 24px; color: #e94560; margin-top: 10px; }
+
+/* Roue de la fortune */
+.wheel-section { max-width: 900px; margin: 0 auto 60px; padding: 0 20px; }
+.wheel-card { background: rgba(15,52,96,0.55); border-radius: 22px; box-shadow: 0 10px 40px rgba(0,0,0,0.35); padding: 40px 36px; text-align: center; animation: fadeInAbout 0.8s ease-in-out; }
+.wheel-card h2          { color: #e94560; font-size: 1.9em; margin: 0 0 6px; }
+.wheel-card .sous-titre  { color: #b0b0b0; font-size: 0.95em; margin-bottom: 30px; }
+.wheel-wrapper { display: flex; justify-content: center; margin: 10px auto 20px; }
+#wheelCanvas { display: block; max-width: 100%; filter: drop-shadow(0 0 30px rgba(233,69,96,0.4)); }
+.wheel-controls { margin-top: 28px; display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; }
+.btn-spin {
+  background: linear-gradient(135deg, #e94560, #c73652); color: #fff; border: none;
+  border-radius: 30px; padding: 14px 50px; font-size: 1.2em; font-weight: 700; cursor: pointer;
+  transition: all 0.2s; box-shadow: 0 4px 20px rgba(233,69,96,0.4);
+}
+.btn-spin:hover    { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(233,69,96,0.5); }
+.btn-spin:disabled { background: #444; cursor: not-allowed; transform: none; box-shadow: none; }
+.result-wheel { margin-top: 22px; padding: 16px 22px; border-radius: 14px; font-size: 1.15em; font-weight: 700; display: none; }
+.result-wheel.perdu     { background: rgba(45,45,45,0.8);    color: #888;    border: 1px solid #444; }
+.result-wheel.rembourse { background: rgba(15,52,96,0.8);     color: #6ea8fe; border: 1px solid #0f3460; }
+.result-wheel.win       { background: rgba(76,175,80,0.15);   color: #4caf50; border: 1px solid rgba(76,175,80,0.4); }
+.result-wheel.bigwin    { background: rgba(200,118,10,0.15);  color: #f0a830; border: 1px solid rgba(200,118,10,0.4); }
+.result-wheel.jackpot   { background: rgba(184,25,26,0.2); color: #ff4444; border: 1px solid rgba(255,68,68,0.5); animation: jackpotPulse 0.6s ease-in-out 3; }
+@keyframes jackpotPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.03); } }
+.wheel-solde { margin-top: 16px; font-size: 1em; color: #b0b0b0; }
+.wheel-solde span { color: #4caf50; font-weight: 700; }
+.wheel-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 28px; }
+.legend-item  { display: flex; align-items: center; gap: 7px; background: #16213e; border-radius: 20px; padding: 6px 14px; font-size: 0.88em; color: #e0e0e0; }
+.legend-dot   { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+
+
+/* ══ RESPONSIVE ══ */
+
+@media (max-width: 900px) {
+  header.banner { flex-direction: column; gap: 18px; padding: 18px 10px; }
+  .jeux-list { flex-direction: column; align-items: center; }
+}
+@media (max-width: 700px) {
+  .game-card { min-width: 280px; }
+  .divider   { display: none; }
+}
